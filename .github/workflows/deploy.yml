@@ -2,7 +2,7 @@ name: "Desplegar los cambios automaticamente"
 
 on:
   push:
-    brenches:
+    branches:
       - main
 
 jobs:
@@ -12,9 +12,3 @@ jobs:
     steps:
     - name: clonar_repositorio
       uses: actions/checkout@v4
-
-    - name: publicar_ghpages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
