@@ -1,0 +1,17 @@
+name: "Desplegar los cambios automaticamente"
+
+on:
+  push:
+    brenches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: clonar_repositorio
+      uses: actions/checkout@v4
+
+    - name: publicar_ghpages
+      uses: peaceiris/actions-gh-pages@v3
